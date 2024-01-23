@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/greet', [GreetController::class, 'greet']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/greet', [GreetController::class, 'greet'])->name('greet');
 
 Route::get('/page-one', [HomeController::class, 'pageOne'])->name('page1');
 Route::get('/page-two',[HomeController::class, 'pageTwo'])->name('page2');
+
+Route::get('/form', [HomeController::class, 'formPage'])->name('form');

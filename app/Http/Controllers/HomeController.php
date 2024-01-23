@@ -24,6 +24,10 @@ class HomeController extends Controller
         return view('page-two');
     }
 
+    public function formPage()
+    {
+        return view ('form');
+    }
 
 
 }
