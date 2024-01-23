@@ -1,7 +1,8 @@
 @extends('layouts.layout')
 
 @section('main')
-    <form action="">
+    <form action="{{ route('submitForm') }}" method="POST">
+        @csrf
         <label for="name">Enter Your Name</label>
         <input type="text" name="name" id="name">
         <label for="age">Enter your Age</label>
