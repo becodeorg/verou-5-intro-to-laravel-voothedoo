@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
 Route::get('/greet', [GreetController::class, 'greet'])->name('greet');
 
-Route::get('/page-one', [HomeController::class, 'pageOne'])->name('page1');
-Route::get('/page-two',[HomeController::class, 'pageTwo'])->name('page2');
+Route::get('/page-one', [PagesController::class, 'viewPageOne'])->name('page1');
+Route::get('/page-two',[PagesController::class, 'viewPageTwo'])->name('page2');
 
-Route::get('/form', [HomeController::class, 'formPage'])->name('form');
-Route::post('/form', [HomeController::class, 'submitForm'])->name('submitForm');
+Route::get('/form', [FormController::class, 'index'])->name('form');
+Route::post('/form', [FormController::class, 'submitForm'])->name('submitForm');
