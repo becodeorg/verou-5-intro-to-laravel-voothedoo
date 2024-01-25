@@ -4,6 +4,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\GreetController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Users;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,6 @@ Route::get('/page-two',[PagesController::class, 'viewPageTwo'])->name('page2');
 
 Route::get('/form', [FormController::class, 'index'])->name('form');
 Route::post('/form', [FormController::class, 'submitForm'])->name('submitForm');
+
+Route::get('/users', [Users::class, 'index'])->name('users');
+Route::get('/users/{id}', [Users::class, 'show'])->name('showUser');

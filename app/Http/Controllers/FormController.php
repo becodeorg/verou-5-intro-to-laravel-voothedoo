@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -14,8 +15,8 @@ class FormController extends Controller
     public function submitForm(Request $request)
     {
         $name = $request->input('name');
+        $name = ucfirst($name);
         $age = $request->input('age');
-        $responseFeedback = "Thank you $name, form has been submited!";
 
         if (empty($name)) {
             $responseFeedback = 'Name can\'t be empty';
@@ -29,6 +30,14 @@ class FormController extends Controller
             $responseFeedback = 'Age should only contain numbers';
         }
 
+        if(empty($responseFeedback)){
+            User::create([
+                'name'=> $name,
+                'age'=> $age,
+            ]);
+        }
+
+        $responseFeedback = "Thank you $name, form has been submited!";
         return view ('confirm', ['responseFeedback'=>$responseFeedback]);
     }
 }

@@ -15,6 +15,7 @@
         <a href="{{ route('page2') }}">Page2</a>
         <a href="{{ route('greet') }}">Greet</a>
         <a href="{{ route('form') }}">FormPage</a>
+        <a href="{{ route('users') }}">All Users</a>
         <h1>Here Is the Logo</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, autem!</p>
     </header>
