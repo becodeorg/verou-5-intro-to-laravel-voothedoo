@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title')
+    Welcome
+@endsection
+
 @section('main')
     <h2>This is the Main section</h2>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima expedita, iusto inventore hic repellendus

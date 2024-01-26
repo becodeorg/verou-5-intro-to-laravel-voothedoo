@@ -1,5 +1,8 @@
 @extends('layouts.layout')
 
+@section('title')
+    Users
+@endsection
 
 @section('main')
     <ul>

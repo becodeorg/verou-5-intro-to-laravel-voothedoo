@@ -1,5 +1,9 @@
 @extends('layouts.layout')
 
+@section('title')
+    Form
+@endsection
+
 @section('main')
     <form action="{{ route('submitForm') }}" method="POST">
         @csrf
