@@ -20,7 +20,7 @@ class FormController extends Controller
 
         if (empty($name)) {
             $responseFeedback = 'Name can\'t be empty';
-        } elseif (!preg_match("/^[A-z]+$/", $name)) {
+        } elseif (!preg_match("/^[A-z\s]+$/", $name)) {
             $responseFeedback = 'Name should only contain alphabetical characters';
         }
 

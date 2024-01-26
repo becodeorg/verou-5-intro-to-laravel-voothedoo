@@ -10,7 +10,7 @@ class Users extends Controller
     public function index()
     {
         $users = User::all();
-        return view ('users', [
+        return view ('users.index', [
             'users'=> $users,
         ]);
     }
@@ -18,8 +18,14 @@ class Users extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        return view ('user', [
+        return view ('users.show', [
             'user'=> $user,
         ]);
+    }
+
+    public function destroy ($id)
+    {
+        User::destroy($id);
+        return redirect ('/users');
     }
 }

@@ -30,3 +30,4 @@ Route::post('/form', [FormController::class, 'submitForm'])->name('submitForm');
 
 Route::get('/users', [Users::class, 'index'])->name('users');
 Route::get('/users/{id}', [Users::class, 'show'])->name('showUser');
+Route::delete('users/{id}', [Users::class, 'destroy'])->name('destroyUser');
